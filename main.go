@@ -41,6 +41,7 @@ func main() {
 			icalEvent.SetEndAt(event.endsAt)
 			icalEvent.SetLocation(event.location)
 			icalEvent.SetDescription(event.url)
+			icalEvent.SetSummary(event.title)
 			icalEvent.SetURL(event.url)
 		}
 
