@@ -34,7 +34,7 @@ func main() {
 			fmt.Printf("%s\n  %s - %s\n  @ %s\n  %s\n\n", event.title, event.startsAt, event.endsAt,
 				event.location, event.url)
 
-			icalEvent := cal.AddEvent(event.url)
+			icalEvent := cal.AddEvent(event.id)
 			icalEvent.SetDtStampTime(time.Now())
 			icalEvent.SetStartAt(event.startsAt)
 			icalEvent.SetEndAt(event.endsAt)
@@ -83,6 +83,8 @@ func parsePage(html string, midnight time.Time) (events []eventListing, err erro
 		aTag := htmlquery.FindOne(div, `/parent::a`)
 		if aTag != nil {
 			event.url = baseURL + htmlquery.SelectAttr(aTag, "href")
+			parts := strings.Split(event.url, "/")
+			event.id = fmt.Sprintf("2019-%s@internetfreedomfestival.org", parts[len(parts)-1])
 		}
 
 		events = append(events, event)
@@ -173,6 +175,7 @@ func downloadURL(url string) (string, error) {
 
 type eventListing struct {
 	url      string
+	id       string
 	title    string
 	startsAt time.Time
 	endsAt   time.Time
