@@ -47,10 +47,7 @@ func main() {
 
 		time.Sleep(time.Duration(1) * time.Second)
 	}
-	serialized := cal.Serialize()
-	bytes := []byte(strings.Replace(serialized, "\n", "\r\n", -1))
-
-	ioutil.WriteFile("iff2019.ics", bytes, 0600)
+	ioutil.WriteFile("iff2019.ics", []byte(cal.Serialize()), 0600)
 
 }
 
