@@ -28,3 +28,8 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+   name = "github.com/arran4/golang-ical"
+   revision="ca59d6870d8b730e362a4656d8b49e33c69cabcd"
+

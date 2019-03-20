@@ -18,12 +18,12 @@
   revision = "ce1d48779e67a1ddfb380995fe532b2e0015919c"
 
 [[projects]]
-  branch = "master"
-  digest = "1:bd7c193f2215e12a93aee656b168229230806fdae82c5f8d1411750f77e7dbd1"
+  branch = "newlinechanges"
+  digest = "1:01a8f9f66bf745c1f19beff3a5f4703a0bda394fb54ee470646bdf6e9166eccf"
   name = "github.com/arran4/golang-ical"
   packages = ["."]
   pruneopts = "UT"
-  revision = "4d707e739562d7043fb6e6f61819971e93284502"
+  revision = "ca59d6870d8b730e362a4656d8b49e33c69cabcd"
 
 [[projects]]
   branch = "master"
