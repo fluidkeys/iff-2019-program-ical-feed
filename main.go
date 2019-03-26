@@ -111,13 +111,13 @@ func parseTimeDiv(text string, midnight time.Time) (*time.Time, *time.Time, erro
 	endsHour, _ := strconv.Atoi(match[3])
 	endsMin, _ := strconv.Atoi(match[4])
 
-	afternoon := match[5] == "P"
+	afternoon := match[5] == "P" // refers to the *end* time. start time has no am/pm
 
 	if afternoon {
-		endsHour += 12
+		endsHour = make24Hour(endsHour)
 
-		if startsHour+12 < endsHour {
-			startsHour += 12
+		if make24Hour(startsHour) < endsHour {
+			startsHour = make24Hour(startsHour)
 		}
 	}
 
@@ -130,6 +130,13 @@ func parseTimeDiv(text string, midnight time.Time) (*time.Time, *time.Time, erro
 	)
 
 	return &startsAt, &endsAt, nil
+}
+
+// make24Hour returns the hour in 24-hour format an an *afternoon* time.
+// e.g. 12 PM -> 12
+//      1 PM -> 13
+func make24Hour(afternoonHour int) int {
+	return (afternoonHour % 12) + 12
 }
 
 // <div class="col-md-5 event_block">
