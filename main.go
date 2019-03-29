@@ -18,6 +18,7 @@ func main() {
 	cal := ics.NewCalendar()
 	cal.SetMethod(ics.MethodRequest)
 	cal.SetProductId("-//Paul & Ian (www.fluidkeys.com)//Updated hourly from IFF website/")
+	cal.SetName("IFF 2019 events program")
 
 	for _, dayPage := range dayUrls {
 		fmt.Println(dayPage.url)
