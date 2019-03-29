@@ -46,6 +46,6 @@ Go back to your calendar. On the left, under **Other calendars** you should see 
 * Go back to your home screen and open 'Calendar'
 * You should now see the IFF events showing as a seperate Calendar:
 
-![Screenshot: IFF 2019 events showing in Calendar on an iPhone](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-5-6.png)
+![Screenshot: IFF 2019 events showing in Calendar on an iPhone](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-7.png)
 
 Later, to delete the calender, go to 'Passwords & Accounts', tap the 'Subscribed Calendars', select 'IFF 2019 events program' then at the bottom tap 'Delete Account'
