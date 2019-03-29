@@ -8,7 +8,7 @@ You can add the iCal feed URL to your calendar (e.g. [Google Calendar](https://g
 
 ## Google Calendar
 
-* Open [Google Calendar](#) on the desktop.
+* Open [Google Calendar](https://calendar.google.com) on the desktop.
 * On the left, above **My calendars** click the 3 dots next to `Add calendar`, then select `From URL`
 
 ![Screenshot: select Add Calendar then From URL](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/google-calendar-add-from-url.png)
