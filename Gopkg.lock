@@ -18,12 +18,11 @@
   revision = "ce1d48779e67a1ddfb380995fe532b2e0015919c"
 
 [[projects]]
-  branch = "master"
-  digest = "1:709431c8efd8ba659f4aeca86b030cf7034bb915f23f59dde1688aaa94b8b8ee"
+  digest = "1:858ee2ee0d08accecdcb050fc7b3b7c3b866429f7c1de48fab42a3e7ed68c6f7"
   name = "github.com/arran4/golang-ical"
   packages = ["."]
   pruneopts = "UT"
-  revision = "9cfe4762d5f7dcd85a0e61b5fcb07a30728ea506"
+  revision = "67e08db67ae7eaa1fa6ea60e8c0a2ad4fec3f4ef"
   source = "github.com/paulfurley/fork-golang-ical"
 
 [[projects]]
@@ -39,7 +38,7 @@
   revision = "d196dffd7c2beec1957382065df08bcc353b9706"
 
 [[projects]]
-  digest = "1:aa4d6967a3237f8367b6bf91503964a77183ecf696f1273e8ad3551bb4412b5f"
+  digest = "1:4392fcf42d5cf0e3ff78c96b2acf8223d49e4fdc53eb77c99d2f8dfe4680e006"
   name = "golang.org/x/text"
   packages = [
     "encoding",
@@ -54,11 +53,14 @@
     "encoding/unicode",
     "internal/gen",
     "internal/tag",
+    "internal/triegen",
+    "internal/ucd",
     "internal/utf8internal",
     "language",
     "runes",
     "transform",
     "unicode/cldr",
+    "unicode/norm",
   ]
   pruneopts = "UT"
   revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
@@ -70,6 +72,7 @@
   input-imports = [
     "github.com/antchfx/htmlquery",
     "github.com/arran4/golang-ical",
+    "golang.org/x/text/unicode/norm",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -31,6 +31,6 @@
 
 [[constraint]]
    name = "github.com/arran4/golang-ical"
-   branch="master"
+   revision="67e08db67ae7eaa1fa6ea60e8c0a2ad4fec3f4ef"
    source="github.com/paulfurley/fork-golang-ical"
 
