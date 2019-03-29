@@ -50,6 +50,8 @@ const (
 	PropertyMethod          Property = "METHOD"
 	PropertyProductId       Property = "PRODID"
 	PropertyVersion         Property = "VERSION"
+	PropertyName            Property = "NAME"
+	PropertyXWrCalName      Property = "X-WR-CALNAME"
 	PropertyAttach          Property = "ATTACH"
 	PropertyCategories      Property = "CATEGORIES"
 	PropertyClass           Property = "CLASS"
@@ -288,6 +290,14 @@ func (calendar *Calendar) SetVersion(s string, props ...PropertyParameter) {
 
 func (calendar *Calendar) SetProductId(s string, props ...PropertyParameter) {
 	calendar.setProperty(PropertyProductId, string(s), props...)
+}
+
+// SetName sets the NAME and X-WR-CALNAME property.
+// For NAME, see https://tools.ietf.org/html/rfc7986#section-5.1
+// For X-WR-CALNAME, see https://en.wikipedia.org/wiki/ICalendar#Calendar_extensions
+func (calendar *Calendar) SetName(s string, props ...PropertyParameter) {
+	calendar.setProperty(PropertyName, string(s), props...)
+	calendar.setProperty(PropertyXWrCalName, string(s), props...)
 }
 
 func (calendar *Calendar) setProperty(property Property, value string, props ...PropertyParameter) {

@@ -18,11 +18,13 @@
   revision = "ce1d48779e67a1ddfb380995fe532b2e0015919c"
 
 [[projects]]
-  digest = "1:4592059365f5af89a8892bc491ed9018b4d597e2ae2324b458b2a74ca930c5af"
+  branch = "master"
+  digest = "1:709431c8efd8ba659f4aeca86b030cf7034bb915f23f59dde1688aaa94b8b8ee"
   name = "github.com/arran4/golang-ical"
   packages = ["."]
   pruneopts = "UT"
-  revision = "15f120a86efcd9d3c25c6dd432b8156fec6ec3e0"
+  revision = "9cfe4762d5f7dcd85a0e61b5fcb07a30728ea506"
+  source = "github.com/paulfurley/fork-golang-ical"
 
 [[projects]]
   branch = "master"
