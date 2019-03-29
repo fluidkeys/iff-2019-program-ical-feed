@@ -8,4 +8,6 @@ iCal feed URL: [fluidkeys.com/iff-calendar-2019](https://www.fluidkeys.com/iff-c
 
 ## Google Calendar
 
+![Screenshot: select Add Calendar then From URL](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/google-calendar-add-from-url.png)
+
 ## iPhone calendar
