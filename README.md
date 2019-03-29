@@ -25,3 +25,11 @@ Go back to your calendar. On the left, under **Other calendars** you should see 
 
 
 ## iPhone calendar
+
+![Screenshot: select 'Passwords & Accounts' then 'Add Account'](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-1-2.png)
+
+![Screenshot: select 'Other' then 'Add Subscribed Calendar'](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-3-4.png)
+
+![Screenshot: type 'fluidkeys.com/iff2019' into Server, then tap 'Done'](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-5-6.png)
+
+![Screenshot: IFF 2019 events showing in Calendar on an iPhone](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-5-6.png)
