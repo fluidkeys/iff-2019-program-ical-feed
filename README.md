@@ -26,10 +26,26 @@ Go back to your calendar. On the left, under **Other calendars** you should see 
 
 ## iPhone calendar
 
+* Open 'Settings' on the iPhone.
+* Scroll down to find 'Passwords & Accounts' and tap it.
+* Tap 'Add account'
+
 ![Screenshot: select 'Passwords & Accounts' then 'Add Account'](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-1-2.png)
+
+* Tap 'Other' from the list of accounts.
+* Tap 'Add Subscribed Calendar'
 
 ![Screenshot: select 'Other' then 'Add Subscribed Calendar'](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-3-4.png)
 
+* In the field for `Server` type `fluidkeys.com/iff2019`
+* Tap 'Next' and you should see it populate the Description.
+* Tap 'Save' in the top right
+
 ![Screenshot: type 'fluidkeys.com/iff2019' into Server, then tap 'Done'](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-5-6.png)
 
+* Go back to your home screen and open 'Calendar'
+* You should now see the IFF events showing as a seperate Calendar:
+
 ![Screenshot: IFF 2019 events showing in Calendar on an iPhone](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/iphone-step-5-6.png)
+
+Later, to delete the calender, go to 'Passwords & Accounts', tap the 'Subscribed Calendars', select 'IFF 2019 events program' then at the bottom tap 'Delete Account'
