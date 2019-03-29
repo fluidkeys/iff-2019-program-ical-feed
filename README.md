@@ -19,7 +19,7 @@ Don't tick the checkbox.
 
 ![Screenshot: showing a URL text box](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/google-calendar-from-url.png)
 
-Go back to your calendar. On the left, under **Other calendars** you should see the IFF 2019 calendar.
+Go back to your calendar. On the left, under **Other calendars** you should see the 'IFF 2019 events program'.
 
 ![Screenshot: calendar list showing IFF 2019 events programL](https://raw.githubusercontent.com/fluidkeys/iff-2019-program-ical-feed/master/img/google-calendar-iff-calendar.png)
 
