@@ -5,13 +5,15 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
 
 	"github.com/antchfx/htmlquery"
-	"github.com/arran4/golang-ical"
+	ics "github.com/arran4/golang-ical"
 )
 
 func main() {
@@ -22,7 +24,7 @@ func main() {
 
 	for _, dayPage := range dayUrls {
 		fmt.Println(dayPage.url)
-		page, err := downloadURL(dayPage.url)
+		page, err := downloadURLCached(dayPage.url)
 		if err != nil {
 			panic(err)
 		}
@@ -36,12 +38,20 @@ func main() {
 			fmt.Printf("%s\n  %s - %s\n  @ %s\n  %s\n\n", event.title, event.startsAt, event.endsAt,
 				event.location, event.url)
 
+			if sessionPage, err := downloadURLCached(event.url); err != nil {
+				event.description = "[error downloading session description]"
+			} else if fields, err := parseSessionFields(sessionPage); err != nil {
+				event.description = "[error interpreting session description]"
+			} else {
+				event.description = formatDescription(fields)
+			}
+
 			icalEvent := cal.AddEvent(event.id)
 			icalEvent.SetDtStampTime(time.Now())
 			icalEvent.SetStartAt(event.startsAt)
 			icalEvent.SetEndAt(event.endsAt)
 			icalEvent.SetLocation(event.location)
-			icalEvent.SetDescription(event.url)
+			icalEvent.SetDescription(event.description)
 			icalEvent.SetSummary(event.title)
 			icalEvent.SetURL(event.url)
 		}
@@ -183,14 +193,61 @@ func downloadURL(url string) (string, error) {
 	return string(body), nil
 }
 
+// downloadURLCached tries to return a cached version of the URL from the filesystem. If it doesn't
+// exist, it downloads the URL and saves it back to disk.
+func downloadURLCached(url string) (string, error) {
+	slug := slugify(url)
+	err := os.MkdirAll(".cache", 0700)
+	if err != nil {
+		return "", err
+	}
+
+	cacheFilename := filepath.Join(".cache", slug)
+	f, err := os.Open(cacheFilename)
+	if err != nil {
+		// cache miss: download & save back
+		log.Printf("cache miss %s, downloading %s", cacheFilename, url)
+
+		html, err := downloadURL(url)
+		if err != nil {
+			return "", err
+		}
+
+		err = ioutil.WriteFile(cacheFilename, []byte(html), 0600)
+		if err != nil {
+			return "", fmt.Errorf("error writing back cache: %v", err)
+		}
+
+		return html, nil
+	}
+
+	data, err := ioutil.ReadAll(f)
+	if err != nil {
+		return "", fmt.Errorf("error reading from cache: %v", err)
+	}
+	return string(data), nil
+}
+
+func slugify(input string) string {
+	slug := strings.TrimSpace(input)
+	slug = strings.ToLower(slug)
+
+	slug = regexp.MustCompile("[^a-z0-9-_]").ReplaceAllString(slug, "-")
+	slug = regexp.MustCompile("-+").ReplaceAllString(slug, "-")
+	slug = strings.Trim(slug, "-_")
+
+	return slug
+}
+
 type eventListing struct {
-	url      string
-	id       string
-	title    string
-	startsAt time.Time
-	endsAt   time.Time
-	track    string
-	location string
+	url         string
+	id          string
+	title       string
+	startsAt    time.Time
+	endsAt      time.Time
+	track       string
+	location    string
+	description string
 }
 
 const baseURL = "https://platform.internetfreedomfestival.org"
